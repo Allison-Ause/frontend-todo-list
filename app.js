@@ -6,7 +6,7 @@ signUpForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const formData = new FormData(signUpForm);
-    const data = await signUpUser({
+    await signUpUser({
         firstName: formData.get('first-name'),
         lastName: formData.get('last-name'),
         email: formData.get('email'),
