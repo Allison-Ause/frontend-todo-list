@@ -40,3 +40,34 @@ export async function signInUser(userInfo) {
         console.error(data.message);
     }
 }
+
+export async function getUser() {
+    console.log('getUser firing');
+    const res = await fetch(`${BASE_URL}/api/v1/users/me`, {
+        method: 'GET',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+    });
+    console.log('res from getUser', res);
+    if (res.ok) {
+        const user = await res.json();
+        console.log('user', user);
+        return user;
+    }
+}
+
+export async function checkUser() {
+    const user = await getUser();
+    if (!user) location.replace('../');
+}
+
+export async function redirectIfLoggedIn() {
+    console.log('redirectIfLoggedIn firing');
+    const user = await getUser();
+    if (user) {
+        location.replace('./todos');
+    }
+}
