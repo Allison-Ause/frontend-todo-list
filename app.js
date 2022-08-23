@@ -1,11 +1,12 @@
-import { signUpUser } from './utils/fetch-utils';
+import { signUpUser } from './utils/fetch-utils.js';
 
-const signUpForm = document.querySelector('form');
+const signUpForm = document.getElementById('sign-up-form');
+const formData = new FormData(signUpForm);
 
 signUpForm.addEventListener('submit', async (e) => {
+    console.log('form functioning');
     e.preventDefault();
 
-    const formData = new FormData(signUpForm);
     await signUpUser({
         firstName: formData.get('first-name'),
         lastName: formData.get('last-name'),

@@ -1,8 +1,9 @@
 // create signUpUser function
-// cross-fetch?
+
 const BASE_URL = 'http://localhost:7890';
 
-export async function signUpForm(userInfo) {
+export async function signUpUser(userInfo) {
+    console.log('firing');
     const res = await fetch(`${BASE_URL}/api/v1/users`, {
         method: 'POST',
         headers: {
@@ -14,8 +15,9 @@ export async function signUpForm(userInfo) {
     });
     const data = await res.json();
     if (res.ok) {
-        location.replace('./tasks');
+        location.replace('./todos');
     } else {
+        // eslint-disable-next-line no-console
         console.error(data.message);
     }
 }
