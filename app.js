@@ -43,7 +43,7 @@ async function handleAddTodo(todo) {
 const TodoForm = createTodoForm(document.querySelector('#todo-form'), { handleAddTodo });
 const TodoList = createTodoList(document.querySelector('#todo-list'));
 
-await redirectIfLoggedIn();
+redirectIfLoggedIn(); //await made this work. not sure if broken now
 
 function display() {
     TodoForm();
