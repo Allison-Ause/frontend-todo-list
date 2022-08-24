@@ -20,7 +20,6 @@ signUpForm.addEventListener('submit', async (e) => {
 
 signInForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    console.log('form functioning');
     const formData = new FormData(signInForm);
     await signInUser({
         email: formData.get('email'),

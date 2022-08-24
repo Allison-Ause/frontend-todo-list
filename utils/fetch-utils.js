@@ -22,7 +22,6 @@ export async function signUpUser(userInfo) {
 }
 
 export async function signInUser(userInfo) {
-    console.log('firing');
     const res = await fetch(`${BASE_URL}/api/v1/users/sessions`, {
         method: 'POST',
         headers: {
@@ -42,7 +41,6 @@ export async function signInUser(userInfo) {
 }
 
 export async function getUser() {
-    console.log('getUser firing');
     const res = await fetch(`${BASE_URL}/api/v1/users/me`, {
         method: 'GET',
         headers: {
@@ -51,10 +49,9 @@ export async function getUser() {
         },
         credentials: 'include',
     });
-    console.log('res from getUser', res);
+
     if (res.ok) {
         const user = await res.json();
-        console.log('user', user);
         return user;
     }
 }
@@ -65,7 +62,6 @@ export async function checkUser() {
 }
 
 export async function redirectIfLoggedIn() {
-    console.log('redirectIfLoggedIn firing');
     const user = await getUser();
     if (user) {
         location.replace('./todos');
@@ -83,7 +79,7 @@ export async function getAllTodos() {
     });
     if (res.ok) {
         const todoList = await res.json();
-        console.log('todos', todoList);
+
         return todoList;
     }
 }
