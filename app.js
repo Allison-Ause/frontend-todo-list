@@ -1,4 +1,4 @@
-import { signUpUser, signInUser, redirectIfLoggedIn, addTodo } from './utils/fetch-utils.js';
+import { signUpUser, signInUser, redirectIfLoggedIn, getAllTodos } from './utils/fetch-utils.js';
 import createTodoList from './components/TodoList.js';
 import createTodoForm from './components/TodoForm.js';
 
@@ -28,7 +28,7 @@ signInForm.addEventListener('submit', async (e) => {
 });
 
 async function handlePageLoad() {
-    const user = await getUser();
+    // const user = await getUser();
     if (!user) location.replace('../');
     todoList = await getAllTodos();
     display();
@@ -49,3 +49,5 @@ function display() {
     TodoForm();
     TodoList({ todoList });
 }
+
+handlePageLoad();
