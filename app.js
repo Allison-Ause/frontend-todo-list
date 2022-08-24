@@ -29,18 +29,18 @@ signInForm.addEventListener('submit', async (e) => {
 
 async function handlePageLoad() {
     // const user = await getUser();
-    if (!user) location.replace('../');
+    // if (!user) location.replace('../');
     todoList = await getAllTodos();
     display();
 }
 
-async function handleAddTodo(todo) {
-    const newTodo = await addTodo(todo);
-    todoList.push(newTodo);
-    display();
-}
+// async function handleAddTodo(todo) {
+//     const newTodo = await addTodo(todo);
+//     todoList.push(newTodo);
+//     display();
+// }
 
-const TodoForm = createTodoForm(document.querySelector('#todo-form'), { handleAddTodo });
+const TodoForm = createTodoForm(document.querySelector('#todo-form') /*, { handleAddTodo }*/);
 const TodoList = createTodoList(document.querySelector('#todo-list'));
 
 redirectIfLoggedIn(); //await made this work. not sure if broken now
