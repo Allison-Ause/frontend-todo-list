@@ -71,3 +71,19 @@ export async function redirectIfLoggedIn() {
         location.replace('./todos');
     }
 }
+
+export async function getAllTodos() {
+    const res = await fetch(`${BASE_URL}/api/v1/todos`, {
+        method: 'GET',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+    });
+    if (res.ok) {
+        const todoList = await res.json();
+        console.log('todos', todoList);
+        return todoList;
+    }
+}

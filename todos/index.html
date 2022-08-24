@@ -18,12 +18,16 @@
 
     <body>
         <header>
-            <h1>Your todos</h1>
+            <h1>Your To-Dos</h1>
         </header>
 
         <main>
             <h2>Get Busy!</h2>
-            <ul id="task-list"></ul>
+            <form id="todo-form">
+                <input type="text" name="todo" placeholder="new to-do here" />
+                <button class="button is-primary">Add to List</button>
+            </form>
+            <ul id="todo-list"></ul>
         </main>
 
         <footer>&copy;2022 Software Developer</footer>
