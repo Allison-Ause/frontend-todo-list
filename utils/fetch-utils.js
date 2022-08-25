@@ -50,7 +50,7 @@ export async function getUser() {
         },
         credentials: 'include',
     });
-
+    console.log('RES.STATUS', res.status);
     if (res.ok) {
         const user = await res.json();
         return user;
