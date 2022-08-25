@@ -34,6 +34,8 @@ export async function signInUser(userInfo) {
         body: JSON.stringify(userInfo),
     });
     const data = await res.json();
+    console.log('DATA', data);
+    console.log('RES.STATUS', res.status);
     if (res.ok) {
         location.replace('./todos');
     } else {
@@ -51,7 +53,7 @@ export async function getUser() {
         },
         credentials: 'include',
     });
-    console.log('RES.STATUS', res.status);
+
     if (res.ok) {
         const user = await res.json();
         return user;
