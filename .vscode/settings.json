@@ -1,0 +1,23 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#fffdfd",
+        "activityBar.background": "#fffdfd",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#00bf00",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "commandCenter.border": "#15202b99",
+        "sash.hoverBorder": "#fffdfd",
+        "statusBar.background": "#ffcad4",
+        "statusBar.foreground": "#15202b",
+        "statusBarItem.hoverBackground": "#ff97ab",
+        "statusBarItem.remoteBackground": "#ffcad4",
+        "statusBarItem.remoteForeground": "#15202b",
+        "titleBar.activeBackground": "#ffcad4",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.inactiveBackground": "#ffcad499",
+        "titleBar.inactiveForeground": "#15202b99"
+    },
+    "peacock.color": "#ffcad4",
+    "cSpell.words": ["Todos"]
+}
