@@ -1,4 +1,4 @@
-export default function createTodoForm(form, { handleAddTodo }) {
+export default function createTodoForm(form, handleAddTodo) {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 

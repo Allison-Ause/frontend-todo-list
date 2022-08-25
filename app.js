@@ -1,8 +1,4 @@
-import { signUpUser, signInUser, redirectIfLoggedIn, getAllTodos } from './utils/fetch-utils.js';
-import createTodoList from './components/TodoList.js';
-import createTodoForm from './components/TodoForm.js';
-
-let todoList = [];
+import { signUpUser, signInUser, redirectIfLoggedIn } from './utils/fetch-utils.js';
 
 const signUpForm = document.getElementById('sign-up-form');
 const signInForm = document.getElementById('sign-in-form');
@@ -28,26 +24,7 @@ signInForm.addEventListener('submit', async (e) => {
 });
 
 async function handlePageLoad() {
-    // const user = await getUser();
-    // if (!user) location.replace('../');
-    todoList = await getAllTodos();
-    display();
-}
-
-// async function handleAddTodo(todo) {
-//     const newTodo = await addTodo(todo);
-//     todoList.push(newTodo);
-//     display();
-// }
-
-const TodoForm = createTodoForm(document.querySelector('#todo-form') /*, { handleAddTodo }*/);
-const TodoList = createTodoList(document.querySelector('#todo-list'));
-
-redirectIfLoggedIn(); //await made this work. not sure if broken now
-
-function display() {
-    TodoForm();
-    TodoList({ todoList });
+    redirectIfLoggedIn();
 }
 
 handlePageLoad();

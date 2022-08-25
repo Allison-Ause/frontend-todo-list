@@ -1,6 +1,7 @@
 // create signUpUser function
 
-const BASE_URL = 'https://aause-backend-todo-list.herokuapp.com';
+// const BASE_URL = 'https://aause-backend-todo-list.herokuapp.com';
+const BASE_URL = 'http://localhost:7890';
 
 export async function signUpUser(userInfo) {
     const res = await fetch(`${BASE_URL}/api/v1/users`, {
@@ -77,9 +78,28 @@ export async function getAllTodos() {
         },
         credentials: 'include',
     });
+
     if (res.ok) {
         const todoList = await res.json();
 
         return todoList;
+    }
+}
+
+export async function addTodo(todo) {
+    const res = await fetch(`${BASE_URL}/api/v1/todos`, {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ item: todo }),
+        credentials: 'include',
+    });
+
+    if (res.ok) {
+        const newTodo = await res.json();
+
+        return newTodo;
     }
 }
