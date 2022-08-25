@@ -23,6 +23,7 @@ export async function signUpUser(userInfo) {
 }
 
 export async function signInUser(userInfo) {
+    console.log('USERINFO', userInfo);
     const res = await fetch(`${BASE_URL}/api/v1/users/sessions`, {
         method: 'POST',
         headers: {
