@@ -1,7 +1,8 @@
+import handleCompleteTodo from '../todos/todos.js';
+
 export default function createTodoList(root) {
     return ({ todoList }) => {
         root.innerHTML = '';
-        console.log('todoList returned', todoList);
         for (const todo of todoList) {
             const li = Todo(todo);
             root.append(li);
@@ -18,11 +19,11 @@ function Todo(todo) {
     item.textContent = todo.item;
 
     if (todo.bought === true) {
-        todo.classList.add('toggle');
+        item.classList.add('toggle');
     }
 
-    li.addEventListener('dblclick', () => {
-        // handleCompleteTodo;
+    li.addEventListener('dblclick', async () => {
+        await handleCompleteTodo(todo);
     });
 
     li.append(item);

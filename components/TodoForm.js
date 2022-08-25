@@ -9,3 +9,5 @@ export default function createTodoForm(form, handleAddTodo) {
     });
     return () => {};
 }
+
+// handleAddTodo({ item: formData.get('todo') });

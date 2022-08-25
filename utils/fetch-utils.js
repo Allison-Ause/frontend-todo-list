@@ -103,3 +103,22 @@ export async function addTodo(todo) {
         return newTodo;
     }
 }
+
+export async function updateTodo(todo) {
+    console.log('TODO put in fetch', todo);
+    const res = await fetch(`${BASE_URL}/api/v1/todos/${todo.id}`, {
+        method: 'PUT',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(todo), //what goes here?
+        credentials: 'include',
+    });
+    console.log('res from fetch', res);
+
+    if (res.ok) {
+        const updatedTodo = await res.json();
+        return updatedTodo;
+    }
+}

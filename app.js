@@ -24,7 +24,7 @@ signInForm.addEventListener('submit', async (e) => {
 });
 
 async function handlePageLoad() {
-    redirectIfLoggedIn();
+    await redirectIfLoggedIn();
 }
 
 handlePageLoad();
