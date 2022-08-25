@@ -23,7 +23,6 @@ export async function signUpUser(userInfo) {
 }
 
 export async function signInUser(userInfo) {
-    console.log('USERINFO', userInfo);
     const res = await fetch(`${BASE_URL}/api/v1/users/sessions`, {
         method: 'POST',
         headers: {
@@ -34,8 +33,7 @@ export async function signInUser(userInfo) {
         body: JSON.stringify(userInfo),
     });
     const data = await res.json();
-    console.log('DATA', data);
-    console.log('RES.STATUS', res.status);
+
     if (res.ok) {
         location.replace('./todos');
     } else {
